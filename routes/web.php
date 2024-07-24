@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
 });
+
+Route::get('login', function() {
+    echo"login";
+});
+
+Route::get('priya', function() {
+    echo"hello";
+})->name('user.register');
+
+
+
+
+
+Route::get('test', 'testcontroller@index')->name('hello');
+
+Route::get('/table','testcontroller@table')->name('table');
