@@ -15,8 +15,8 @@ Route::get('/', function() {
     return view('welcome');
 });
 
-Route::get('login', function() {
-    echo"login";
+Route::get('/login', function() {
+    return "Amit Tiwari";
 });
 
 Route::get('priya', function() {
@@ -24,9 +24,14 @@ Route::get('priya', function() {
 })->name('user.register');
 
 
-
-
-
 Route::get('test', 'testcontroller@index')->name('hello');
-
 Route::get('/table','testcontroller@table')->name('table');
+
+// ................Crud operation..................................//
+
+Route::get('/users','Userscontroller@index')->name('users.index');
+Route::get('/users/create','Userscontroller@create')->name('users.create');
+Route::POST('/users/store','Userscontroller@store')->name('users.store');
+Route::get('/users/delete/{id}','Userscontroller@delete')->name('users.delete');
+Route::get('/users/edit/{id}','Userscontroller@edit')->name('users.edit');
+Route::post('/users/update/{id}','Userscontroller@update')->name('users.update');
